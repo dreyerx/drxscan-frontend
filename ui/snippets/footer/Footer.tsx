@@ -29,50 +29,37 @@ const Footer = () => {
     },
   });
   const apiVersionUrl = getApiVersionUrl(backendVersionData?.backend_version);
-  const issueUrl = useIssueUrl(backendVersionData?.backend_version);
-  const BLOCKSCOUT_LINKS = [
+  const DREYERX_LINKS = [
     {
-      icon: 'edit' as const,
+      icon: 'globe-b' as const,
       iconSize: '16px',
-      text: 'Submit an issue',
-      url: issueUrl,
+      text: 'Website',
+      url: 'https://dreyerx.com',
     },
     {
-      icon: 'social/canny' as const,
+      icon: 'stats' as const,
       iconSize: '20px',
-      text: 'Feature request',
-      url: 'https://blockscout.canny.io/feature-requests',
+      text: 'Ecosystem',
+      url: 'httts://dreyerx.com/#ecosystem',
     },
     {
       icon: 'social/git' as const,
       iconSize: '18px',
-      text: 'Contribute',
-      url: 'https://github.com/blockscout/blockscout',
+      text: 'Github',
+      url: 'https://github.com/dreyerx',
     },
     {
-      icon: 'social/tweet' as const,
+      icon: 'validator' as const,
       iconSize: '18px',
-      text: 'Twitter',
-      url: 'https://www.twitter.com/blockscoutcom',
+      text: 'Benefits',
+      url: 'https://dreyerx.com/#benefits',
     },
     {
-      icon: 'social/discord' as const,
+      icon: 'token' as const,
       iconSize: '24px',
-      text: 'Discord',
-      url: 'https://discord.gg/blockscout',
-    },
-    {
-      icon: 'discussions' as const,
-      iconSize: '20px',
-      text: 'Discussions',
-      url: 'https://github.com/orgs/blockscout/discussions',
-    },
-    {
-      icon: 'donate' as const,
-      iconSize: '20px',
-      text: 'Donate',
-      url: 'https://github.com/sponsors/blockscout',
-    },
+      text: 'Tokenomics',
+      url: 'https://dreyerx.com/#tokenomics',
+    }
   ];
 
   const frontendLink = (() => {
@@ -168,7 +155,7 @@ const Footer = () => {
         >
           {
             ([
-              { title: 'Blockscout', links: BLOCKSCOUT_LINKS },
+              { title: 'DreyerX', links: DREYERX_LINKS },
               ...(linksData || []),
             ])
               .slice(0, colNum)
@@ -218,7 +205,7 @@ const Footer = () => {
         justifyContent={{ lg: 'flex-end' }}
         mt={{ base: 8, lg: 0 }}
       >
-        { BLOCKSCOUT_LINKS.map(link => <FooterLinkItem { ...link } key={ link.text }/>) }
+        { DREYERX_LINKS.map(link => <FooterLinkItem { ...link } key={ link.text }/>) }
       </Grid>
     </Grid>
   );
